@@ -1,0 +1,47 @@
+document.querySelector(".video-wrapper").addEventListener("click", function () {
+  this.innerHTML =
+    '<iframe width="100%" height="500" ' +
+    'src="https://www.youtube.com/embed/4iyLBo7LJaw?autoplay=1&mute=1" ' +
+    'frameborder="0" ' +
+    'allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+});
+
+function animarNumeros() {
+  const itens = document.querySelectorAll('.numero');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+
+        const meta = parseInt(el.getAttribute('data-meta'));
+        const prefixo = el.getAttribute('data-prefixo') || '';
+        const sufixo = el.getAttribute('data-sufixo') || '';
+
+        const duracao = 2000;
+        const intervalo = 20;
+        const passos = duracao / intervalo;
+        const incremento = meta / passos;
+
+        let atual = 0;
+
+        const timer = setInterval(() => {
+          atual += incremento;
+
+          if (atual >= meta) {
+            el.textContent = prefixo + meta + sufixo;
+            clearInterval(timer);
+          } else {
+            el.textContent = prefixo + Math.floor(atual) + sufixo;
+          }
+        }, intervalo);
+
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  itens.forEach(item => observer.observe(item));
+}
+
+animarNumeros();
