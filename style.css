@@ -358,6 +358,107 @@ header {
   color: #ffffff;
 }
 
+/* ========== MODAL ========== */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-overlay.ativo {
+  display: flex;
+}
+
+.modal-box {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 36px;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  animation: entrar 0.3s ease;
+}
+
+@keyframes entrar {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.modal-fechar {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #f5f5f5;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #555;
+  transition: background 0.3s;
+}
+
+.modal-fechar:hover {
+  background: #ddd;
+}
+
+.modal-icone {
+  font-size: 40px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.modal-box h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #003e1a;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.modal-bloco {
+  margin-bottom: 20px;
+}
+
+.modal-bloco h4 {
+  font-size: 12px;
+  font-weight: 600;
+  color: #003e1a;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 6px;
+}
+
+.modal-bloco p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.modal-tags span {
+  background: #e6f0ea;
+  color: #003e1a;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
 /* ================= ESTÁGIO ================= */
 .estagio {
   background: #ffffff;
