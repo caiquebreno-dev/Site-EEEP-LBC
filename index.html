@@ -147,7 +147,7 @@
                     <img src="imagens/ADM.png" alt="ADM">
                     <div class="curso-info">
                         <h3>Administração</h3>
-                        <a href="#cursos" class="btn-curso">Veja mais →</a>
+                        <a href="#" class="btn-curso" onclick="abrirModal('modal-adm'); return false;">Veja mais →</a>
                     </div>
                 </div>
 
@@ -155,7 +155,7 @@
                     <img src="imagens/DDS.png" alt="DDS">
                     <div class="curso-info">
                         <h3>Desenvolvimento de Sistemas</h3>
-                        <a href="#cursos" class="btn-curso">Veja mais →</a>
+                        <a href="#" class="btn-curso" onclick="abrirModal('modal-dds'); return false;">Veja mais →</a>
                     </div>
                 </div>
 
@@ -163,7 +163,7 @@
                     <img src="imagens/EDF.png" alt="EDF">
                     <div class="curso-info">
                         <h3>Edificações</h3>
-                        <a href="#cursos" class="btn-curso">Veja mais →</a>
+                        <a href="#" class="btn-curso" onclick="abrirModal('modal-edf'); return false;">Veja mais →</a>
                     </div>
                 </div>
 
@@ -171,13 +171,119 @@
                     <img src="imagens/MASSO.png" alt="MASSO">
                     <div class="curso-info">
                         <h3>Massoterapia</h3>
-                        <a href="#cursos" class="btn-curso">Veja mais →</a>
+                        <a href="#" class="btn-curso" onclick="abrirModal('modal-masso'); return false;">Veja mais →</a>
                     </div>
                 </div>
 
             </div>
         </div>
     </section>
+
+    <!-- ========== MODAIS DOS CURSOS ========== -->
+
+    <div class="modal-overlay" id="modal-adm">
+        <div class="modal-box">
+            <button class="modal-fechar" onclick="fecharModal('modal-adm')">✕</button>
+            <div class="modal-icone">📊</div>
+            <h2>Administração</h2>
+            <div class="modal-bloco">
+                <h4>Sobre o curso</h4>
+                <p>Formação voltada para gestão de empresas, com foco em organização, liderança e estratégias de negócio.</p>
+            </div>
+            <div class="modal-bloco">
+                <h4>Duração</h4>
+                <p>3 anos (integrado ao ensino médio)</p>
+            </div>
+            <div class="modal-bloco">
+                <h4>Áreas de atuação</h4>
+                <div class="modal-tags">
+                    <span>Gestão</span>
+                    <span>RH</span>
+                    <span>Financeiro</span>
+                    <span>Marketing</span>
+                    <span>Empreendedorismo</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-dds">
+        <div class="modal-box">
+            <button class="modal-fechar" onclick="fecharModal('modal-dds')">✕</button>
+            <div class="modal-icone">💻</div>
+            <h2>Desenvolvimento de Sistemas</h2>
+            <div class="modal-bloco">
+                <h4>Sobre o curso</h4>
+                <p>Preparação para criar sistemas, sites e aplicativos, com foco em programação e tecnologia.</p>
+            </div>
+            <div class="modal-bloco">
+                <h4>Duração</h4>
+                <p>3 anos (integrado ao ensino médio)</p>
+            </div>
+            <div class="modal-bloco">
+                <h4>Áreas de atuação</h4>
+                <div class="modal-tags">
+                    <span>Programação</span>
+                    <span>Web/Mobile</span>
+                    <span>Sistemas</span>
+                    <span>Banco de Dados</span>
+                    <span>TI</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-edf">
+        <div class="modal-box">
+            <button class="modal-fechar" onclick="fecharModal('modal-edf')">✕</button>
+            <div class="modal-icone">🏗️</div>
+            <h2>Edificações</h2>
+            <div class="modal-bloco">
+                <h4>Sobre o curso</h4>
+                <p>Capacitação para atuar em obras e projetos, desde o planejamento até a execução.</p>
+            </div>
+            <div class="modal-bloco">
+                <h4>Duração</h4>
+                <p>3 anos (integrado ao ensino médio)</p>
+            </div>
+            <div class="modal-bloco">
+                <h4>Áreas de atuação</h4>
+                <div class="modal-tags">
+                    <span>Construção Civil</span>
+                    <span>Projetos</span>
+                    <span>Obras</span>
+                    <span>Orçamentos</span>
+                    <span>Engenharia</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-masso">
+        <div class="modal-box">
+            <button class="modal-fechar" onclick="fecharModal('modal-masso')">✕</button>
+            <div class="modal-icone">💆</div>
+            <h2>Massoterapia</h2>
+            <div class="modal-bloco">
+                <h4>Sobre o curso</h4>
+                <p>Formação em técnicas de massagens terapêuticas e relaxantes, promovendo saúde e bem-estar.</p>
+            </div>
+            <div class="modal-bloco">
+                <h4>Duração</h4>
+                <p>3 anos (integrado ao ensino médio)</p>
+            </div>
+            <div class="modal-bloco">
+                <h4>Áreas de atuação</h4>
+                <div class="modal-tags">
+                    <span>Clínicas</span>
+                    <span>Spas</span>
+                    <span>Bem-estar</span>
+                    <span>Terapias</span>
+                    <span>Atendimento autônomo</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- ========== ESTÁGIO SUPERVISIONADO ========== -->
     <section class="estagio" id="estagio">
@@ -202,9 +308,39 @@
             </div>
         </div>
         <div class="estagio-btn-wrapper">
-            <a href="#estagio" class="btn-estagio">Saiba mais →</a>
+            <a href="#modal-estagio" class="btn-estagio" onclick="abrirModal('modal-estagio')">Saiba mais →</a>
         </div>
     </section>
+
+    <!-- MODAL DO ESTÁGIO -->
+    <div class="modal-overlay" id="modal-estagio">
+    <div class="modal-box">
+        <button class="modal-fechar" onclick="fecharModal('modal-estagio')">✕</button>
+        <div class="modal-icone">📄</div>
+        <h2>Estágio</h2>
+
+        <div class="modal-bloco">
+            <h4>Sobre</h4>
+            <p>O estágio integra a formação do aluno, proporcionando vivência prática na área escolhida e preparando para o mercado de trabalho.</p>
+        </div>
+
+        <div class="modal-bloco">
+            <h4>Como funciona</h4>
+            <p>Os alunos são orientados e acompanhados pela instituição, com oportunidades em empresas parceiras ao longo do curso.</p>
+        </div>
+
+        <div class="modal-bloco">
+            <h4>Benefícios</h4>
+            <div class="modal-tags">
+                <span>Experiência prática</span>
+                <span>Contato com empresas</span>
+                <span>Desenvolvimento profissional</span>
+                <span>Networking</span>
+                <span>Inserção no mercado</span>
+            </div>
+        </div>
+    </div>
+</div>
 
     <!-- ========== ACONTECE NA LBC ========== -->
     <section class="noticias" id="conteudo">
