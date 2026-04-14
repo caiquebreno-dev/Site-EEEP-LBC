@@ -45,3 +45,22 @@ function animarNumeros() {
 }
 
 animarNumeros();
+
+function abrirModal(id) {
+  document.getElementById(id).classList.add('ativo');
+  document.body.style.overflow = 'hidden';
+}
+
+function fecharModal(id) {
+  document.getElementById(id).classList.remove('ativo');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+  overlay.addEventListener('click', function (e) {
+    if (e.target === this) {
+      this.classList.remove('ativo');
+      document.body.style.overflow = '';
+    }
+  });
+});
