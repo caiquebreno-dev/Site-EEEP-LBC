@@ -89,11 +89,65 @@
             <p>Ao longo da jornada escolar, os estudantes têm a oportunidade de vivenciar experiências que os preparam tanto para o ingresso no ensino superior quanto para uma inserção qualificada no mercado de trabalho. A escola incentiva o protagonismo juvenil, a disciplina e a responsabilidade, além de oferecer suporte pedagógico e orientação para a construção de projetos de vida sólidos.</p>
             <p>Com uma proposta educacional inovadora, a instituição busca formar cidadãos preparados para os desafios do mundo contemporâneo, unindo conhecimento teórico, prática profissional e desenvolvimento pessoal. Dessa forma, a EEEP Lúcia Baltazar Costa se consolida como um espaço de oportunidades, transformação social e construção de futuros promissores.</p>
             
-            <a href="#sobre" class="meu-btn">Leia mais →</a>
+            <a href="#" class="meu-btn" onclick="abrirModalSobre(); return false;">Leia mais →</a>
         </div>
 
     </div>
 </section>
+
+<!-- ========== MODAL SOBRE ========== -->
+<div class="modal-overlay" id="modal-sobre">
+    <div class="modal-box modal-sobre-box">
+        <button class="modal-fechar" onclick="fecharModal('modal-sobre')">✕</button>
+
+        <div class="modal-icone">🏫</div>
+        <h2>EEEP Lúcia Baltazar Costa</h2>
+
+        <!-- PÁGINAS -->
+        <div class="modal-paginas">
+
+            <div class="modal-pagina ativa" data-pagina="1">
+                <h4>Nossa Escola</h4>
+                <p>A EEEP Lúcia Baltazar Costa é uma escola de ensino médio integrado à educação profissional que tem como foco oferecer uma formação completa e de qualidade aos seus estudantes. Inaugurada em 2022, a instituição surge como um importante investimento na educação pública, ampliando o acesso ao ensino técnico e contribuindo para o desenvolvimento educacional e social da região.</p>
+                <p>A escola se destaca por unir o ensino médio tradicional à formação técnica, permitindo que os alunos desenvolvam, ao mesmo tempo, conhecimentos teóricos e habilidades práticas voltadas para o mercado de trabalho.</p>
+            </div>
+
+            <div class="modal-pagina" data-pagina="2">
+                <h4>Estrutura e Rotina</h4>
+                <p>Além da estrutura curricular diferenciada, a EEEP Lúcia Baltazar Costa oferece uma rotina escolar em tempo integral, que favorece um maior aproveitamento dos estudos e o desenvolvimento de atividades complementares, como projetos, oficinas e práticas laboratoriais.</p>
+                <p>Esse modelo contribui para a formação de alunos mais disciplinados, organizados e comprometidos com seus objetivos.</p>
+            </div>
+
+            <div class="modal-pagina" data-pagina="3">
+                <h4>Protagonismo Juvenil</h4>
+                <p>A instituição valoriza o protagonismo juvenil, incentivando os estudantes a participarem ativamente de decisões, projetos e ações dentro e fora da escola. Com o apoio de professores e da equipe pedagógica, os alunos são orientados na construção de seus projetos de vida, desenvolvendo responsabilidade, autonomia e visão de futuro.</p>
+            </div>
+
+            <div class="modal-pagina" data-pagina="4">
+                <h4>Formação Cidadã</h4>
+                <p>A escola se preocupa com a formação cidadã, promovendo valores como respeito, ética, trabalho em equipe e responsabilidade social. Dessa forma, a EEEP Lúcia Baltazar Costa não forma apenas profissionais qualificados, mas também cidadãos conscientes e preparados para contribuir positivamente com a sociedade.</p>
+                <p>Com uma proposta moderna e alinhada às exigências do mundo atual, a escola se consolida como um espaço de aprendizagem, crescimento e oportunidades.</p>
+            </div>
+
+        </div>
+
+        <!-- PAGINAÇÃO -->
+        <div class="modal-paginacao">
+            <button class="btn-pag" id="btn-anterior" onclick="mudarPagina(-1)" disabled>← Anterior</button>
+            <span class="pag-info" id="pag-info">1 / 4</span>
+            <button class="btn-pag" id="btn-proximo" onclick="mudarPagina(1)">Próximo →</button>
+        </div>
+
+        <!-- INDICADORES -->
+        <div class="modal-dots">
+            <span class="dot ativo" data-dot="1"></span>
+            <span class="dot" data-dot="2"></span>
+            <span class="dot" data-dot="3"></span>
+            <span class="dot" data-dot="4"></span>
+        </div>
+
+    </div>
+</div>
 
     <!-- ========== RESULTADOS ========== -->
     <section class="resultados">
