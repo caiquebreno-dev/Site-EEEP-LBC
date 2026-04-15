@@ -64,3 +64,37 @@ document.querySelectorAll('.modal-overlay').forEach(overlay => {
     }
   });
 });
+
+let paginaAtual = 1;
+const totalPaginas = 4;
+
+function abrirModalSobre() {
+  paginaAtual = 1;
+  atualizarPagina();
+  document.getElementById('modal-sobre').classList.add('ativo');
+  document.body.style.overflow = 'hidden';
+}
+
+function mudarPagina(direcao) {
+  paginaAtual += direcao;
+  atualizarPagina();
+}
+
+function atualizarPagina() {
+  document.querySelectorAll('.modal-pagina').forEach(p => p.classList.remove('ativa'));
+  document.querySelectorAll('.dot').forEach(d => d.classList.remove('ativo'));
+
+  document.querySelector(`.modal-pagina[data-pagina="${paginaAtual}"]`).classList.add('ativa');
+  document.querySelector(`.dot[data-dot="${paginaAtual}"]`).classList.add('ativo');
+
+  document.getElementById('pag-info').textContent = `${paginaAtual} / ${totalPaginas}`;
+  document.getElementById('btn-anterior').disabled = paginaAtual === 1;
+  document.getElementById('btn-proximo').disabled = paginaAtual === totalPaginas;
+}
+
+document.querySelectorAll('.dot').forEach(dot => {
+  dot.addEventListener('click', function () {
+    paginaAtual = parseInt(this.getAttribute('data-dot'));
+    atualizarPagina();
+  });
+});
