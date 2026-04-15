@@ -1,11 +1,20 @@
-document.querySelector(".video-wrapper").addEventListener("click", function () {
-  this.innerHTML =
-    '<iframe width="100%" height="500" ' +
-    'src="https://www.youtube.com/embed/4iyLBo7LJaw?autoplay=1&mute=1" ' +
-    'frameborder="0" ' +
-    'allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+// ================= VIDEO =================
+document.querySelectorAll(".video-wrapper").forEach(wrapper => {
+  wrapper.addEventListener("click", function () {
+
+    // garante que só funcione no wrapper correto (que tem a thumb)
+    if (!this.querySelector(".thumb")) return;
+
+    this.innerHTML =
+      '<iframe width="100%" height="500" ' +
+      'src="https://www.youtube.com/embed/4iyLBo7LJaw?autoplay=1&mute=1" ' +
+      'frameborder="0" ' +
+      'allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+  });
 });
 
+
+// ================= ANIMAÇÃO NÚMEROS =================
 function animarNumeros() {
   const itens = document.querySelectorAll('.numero');
 
@@ -46,6 +55,8 @@ function animarNumeros() {
 
 animarNumeros();
 
+
+// ================= MODAIS =================
 function abrirModal(id) {
   document.getElementById(id).classList.add('ativo');
   document.body.style.overflow = 'hidden';
@@ -56,6 +67,7 @@ function fecharModal(id) {
   document.body.style.overflow = '';
 }
 
+// fechar ao clicar fora
 document.querySelectorAll('.modal-overlay').forEach(overlay => {
   overlay.addEventListener('click', function (e) {
     if (e.target === this) {
@@ -65,6 +77,8 @@ document.querySelectorAll('.modal-overlay').forEach(overlay => {
   });
 });
 
+
+// ================= MODAL SOBRE (PAGINAÇÃO) =================
 let paginaAtual = 1;
 const totalPaginas = 4;
 
@@ -92,6 +106,7 @@ function atualizarPagina() {
   document.getElementById('btn-proximo').disabled = paginaAtual === totalPaginas;
 }
 
+// clique nos dots
 document.querySelectorAll('.dot').forEach(dot => {
   dot.addEventListener('click', function () {
     paginaAtual = parseInt(this.getAttribute('data-dot'));
